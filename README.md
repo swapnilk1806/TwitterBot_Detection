@@ -1,47 +1,55 @@
-# TwitterBotDetection
+# 🤖 Twitter Bot Detection
 
-### Twitonomy : 
-https://www.twitonomy.com/dashboard.php
+A machine learning project aimed at detecting Twitter bots based on content and graph features extracted from public tweet data. This system uses **Relevance Vector Machine (RVM)** with a linear kernel for classification, achieving a testing accuracy of **81.25%**.
 
-### GET users/show : 
-https://developer.twitter.com/en/docs/accounts-and-users/follow-search-get-users/api-reference/get-users-show
+---
 
-### GET statuses/user_timeline : 
-https://developer.twitter.com/en/docs/tweets/timelines/api-reference/get-statuses-user_timeline
+## 📘 Introduction
 
-### User Object : 
-https://developer.twitter.com/en/docs/tweets/data-dictionary/overview/user-object
+Social media platforms, especially Twitter, have seen a surge in automated accounts (bots) that are often used for misinformation, spam, or malicious influence. This project builds a bot detection model by combining user metadata, content features, and graph-based features extracted from Twitter's public APIs and datasets.
 
-### Tweet Object : 
-https://developer.twitter.com/en/docs/tweets/data-dictionary/overview/tweet-object
+This system helps in identifying suspicious Twitter accounts using machine learning—specifically **RVM (Relevance Vector Machines)**—trained on real datasets.  
 
-### Entities Object : 
-https://developer.twitter.com/en/docs/tweets/data-dictionary/overview/entities-object
+---
 
-### Python Twitter Tools : 
-https://github.com/sixohsix/twitter/blob/master/twitter/api.py
+## 🎯 Objectives
 
-### Twitter Python API official : 
-https://python-twitter.readthedocs.io/en/latest/twitter.html
+- Extract and merge **user metadata**, **tweet-level content**, and **graph features** from Twitter.
+- Train a classifier to differentiate between bots and human accounts.
+- Use publicly available bot detection datasets for model training and evaluation.
 
-### Twitter python API reference (Tweepy) : 
-http://docs.tweepy.org/en/latest/api.html
+---
 
-### Tweet Scraping : 
-https://pypi.org/project/GetOldTweets3/
-### Unused scraper : 
-https://github.com/5hirish/tweet_scrapper/blob/master/USAGE.md
+## ✨ Features
 
-### Training data : 
-https://botometer.iuni.iu.edu/bot-repository/datasets.html
+- 🔍 **Tweet and User Metadata Extraction** using Twitter API endpoints.
+- 🧠 **Machine Learning Classification** using RVM with a linear kernel.
+- 📊 **Feature Merging and Preprocessing** from various sources (`Content_Data.csv`, `Graph_Data.csv`).
+- ✅ **Model Accuracy: 81.25%** on the test set.
+- 📁 Lightweight, easy-to-extend architecture for new models (SVM, RF, etc.).
 
+---
 
-## FILES
+## 🧾 Dataset Files
 
-1. Content_Data.csv - content features file
-2. Graph_Data.csv - graph features file
-3. Training_Data.csv - final, merged features for training the model
-4. MergingTrainingData (py) - code used to merge features
-5. RVMTrainingModel (py) - code for training the model, training model used : RVM with a linear kernel, testing accuracy : 81.25%
+| File Name             | Description                                  |
+|-----------------------|----------------------------------------------|
+| `Content_Data.csv`    | Content-based features (e.g., tweet stats)   |
+| `Graph_Data.csv`      | Graph-based features (follower/following)    |
+| `Training_Data.csv`   | Final merged dataset used for ML training    |
+| `MergingTrainingData.py` | Script to merge content and graph features |
+| `RVMTrainingModel.py` | Main script to train the model using RVM     |
 
+> Datasets sourced from:  
+[Bot Repository Datasets](https://botometer.iuni.iu.edu/bot-repository/datasets.html)
 
+---
+
+## ⚙️ Setup Instructions
+
+### 📦 Prerequisites
+
+Install required Python packages:
+```bash
+pip install numpy pandas scikit-learn matplotlib
+pip install getoldtweets3
